@@ -20,7 +20,7 @@ class Post(models.Model):
 		return self.comments.filter(approved_comment=True)
 
 
-	# After user creates a post where he should be redirected to, so basically redirect to details of the post made
+	# After user creates a post where he should be redirected to, so basically redirect to details of the recent post made
 	def get_absolute_url(self):
 		return reverse("post_detail", kwargs={"pk": self.pk})
 
@@ -48,7 +48,4 @@ class Comment(models.Model):
 
 	def __str__(self):
 		return self.text
-	
-
-
 	
